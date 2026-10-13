@@ -1,0 +1,133 @@
+/* Phần B: Hoàn thiện CSS theo đề, cơ bản cho người mới học */
+* { box-sizing: border-box; }
+body { 
+  font-family: Arial, Helvetica, sans-serif; 
+  background-color: #f7faf9; 
+  margin: 0; 
+  color: #1f2937;
+}
+.container { 
+  width: min(1060px, 94%); 
+  margin: 0 auto; 
+}
+
+/* Header & Footer */
+.site-header { 
+  padding: 24px 0; 
+  background: #176650; 
+  color: white; 
+  text-align: center; 
+}
+.site-header h1 { margin: 0 0 6px; }
+.site-header p { margin: 0; font-size: 0.9rem; }
+
+.site-footer { 
+  margin-top: 28px; 
+  padding: 20px; 
+  text-align: center; 
+  background-color: #e5e7eb; 
+  font-weight: bold; 
+}
+
+/* Bố cục Form & Khu vực danh sách */
+.add-task-section, .task-list-section {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid #d1d5db;
+}
+
+.form-group, .controls-section {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+/* Khung nhập liệu */
+input[type="text"], input[type="date"], select {
+  padding: 10px;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-size: 1rem;
+  flex: 1; /* Giúp các ô tự động co giãn đều nhau */
+}
+.error-message { color: red; font-size: 0.85rem; width: 100%; }
+
+/* Nút bấm cơ bản */
+.btn {
+  padding: 10px 16px;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  color: white;
+}
+.btn-add { background: #176650; }
+.btn-toggle { background: #3b82f6; }
+.btn-delete { background: #ef4444; }
+
+/* Danh sách công việc */
+#task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  background: #fff;
+  border-left: 6px solid #9ca3af; /* Viền trái mặc định màu xám */
+}
+
+/* TRẠNG THÁI HOÀN THÀNH: Bỏ gạch ngang, chỉ đổi viền và làm mờ chữ */
+.task-item.completed {
+  border-left-color: #10b981; /* Viền trái đổi thành màu xanh */
+  background: #f9fafb;
+}
+.task-item.completed .task-title {
+  color: #6b7280; /* Màu chữ nhạt đi, KHÔNG có text-decoration: line-through */
+}
+
+/* Thông tin bên trong thẻ công việc */
+.task-info { flex: 1; }
+.task-title { margin: 0 0 8px 0; font-size: 1.1rem; }
+.task-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+/* Nền cho mức độ ưu tiên */
+.badge {
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 0.75rem;
+  color: white;
+}
+.priority-high { background: #ef4444; }
+.priority-medium { background: #f59e0b; }
+.priority-low { background: #3b82f6; }
+
+.task-actions { display: flex; gap: 8px; }
+
+/* Chỉnh giao diện cho điện thoại */
+@media screen and (max-width: 576px) {
+  .task-item {
+    flex-direction: column; /* Xếp dọc thay vì xếp ngang */
+    align-items: flex-start;
+    gap: 15px;
+  }
+  .task-actions {
+    width: 100%;
+    display: flex;
+  }
+  .task-actions .btn { flex: 1; } /* Nút bấm dàn đều chiều ngang cho dễ bấm */
+}

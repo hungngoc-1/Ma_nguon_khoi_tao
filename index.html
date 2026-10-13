@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Task Manager</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script> 
+</head>
+<body> 
+  <header class="site-header">
+    <div class="container">
+      <h1>Mini Task Manager</h1>
+      <p>Bài kiểm tra thực hành HTML, CSS, JavaScript</p>
+    </div>
+  </header> 
+  <main class="container">
+    <!-- Form thêm công việc -->
+    <section class="add-task-section">
+      <form id="task-form">
+        <div class="form-group">
+          <input type="text" id="task-name" placeholder="Tên công việc (*)" autocomplete="off">
+          <input type="date" id="task-deadline">
+          <select id="task-priority">
+            <option value="Cao">Ưu tiên: Cao</option>
+            <option value="Trung bình" selected>Ưu tiên: Trung bình</option>
+            <option value="Thấp">Ưu tiên: Thấp</option>
+          </select>
+          <button type="submit" class="btn btn-add">Thêm</button>
+        </div>
+        <div id="error-msg" class="error-message"></div>
+      </form>
+    </section>
+
+    <!-- Khu vực tìm kiếm và lọc -->
+    <section class="controls-section">
+      <input type="text" id="search-input" placeholder="Tìm kiếm công việc...">
+      <select id="filter-status">
+        <option value="Tất cả">Tất cả trạng thái</option>
+        <option value="Chưa hoàn thành">Chưa hoàn thành</option>
+        <option value="Đã hoàn thành">Đã hoàn thành</option>
+      </select>
+    </section>
+
+    <!-- Vùng hiển thị danh sách -->
+    <section class="task-list-section">
+      <ul id="task-list">
+        <!-- Các công việc sẽ được render tại đây bằng JS -->
+      </ul>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <!-- Ghi rõ họ tên và mã sinh viên -->
+    Sinh viên: HỦNG VĂN NGỌC  |  MSSV: 224001738
+  </footer>
+</body>
+</html>
